@@ -1,0 +1,10 @@
+version: '3'
+services:
+    mcserver:
+        image: anapsix/alpine-java
+        container_name: mc-server-container
+        volumes:
+            - ./server.jar:/home/SERVER/server.jar
+        command: ["java", "-jar", "/home/SERVER/server.jar"]
+        ports:
+            - "25565:25565"
